@@ -36,10 +36,10 @@ save_cluster_ID <- function () {
       a <- rownames(as.matrix(fpSim(fpset[as.character(AllIds[1,])], fpset, method="Tanimoto", cutoff=0.3)))
       b <- data.frame(ID=a)
       del <- (!c(AllIds$ID %in% b$ID))
-      AllIds <- AllIds[del,]
-      AllIds <- data.frame(ID= AllIds)
-      counter <- nrow(AllIds)
-      cluster[[length(cluster)+1]] <- list(b)
+      AllIds <<- AllIds[del,]
+      AllIds <<- data.frame(ID= AllIds)
+      counter <<- nrow(AllIds)
+      cluster[[length(cluster)+1]] <<- list(b)
     }
 }
 

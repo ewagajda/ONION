@@ -1,4 +1,4 @@
-source("https://bioconductor.org/biocLite.R")
+source("http://bioconductor.org/biocLite.R")
 biocLite("ChemmineR")
 biocLite("ChemmineOB")
 

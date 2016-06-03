@@ -31,15 +31,19 @@ print(fpset)
 cluster <- list()
 
 # clustering of molecules
-while(counter > 0 ) {
-  a <- rownames(as.matrix(fpSim(fpset[as.character(AllIds[1,])], fpset, method="Tanimoto", cutoff=0.3)))
-  b <- data.frame(ID=a)
-  del <- (!c(AllIds$ID %in% b$ID))
-  AllIds <- AllIds[del,]
-  AllIds <- data.frame(ID= AllIds)
-  counter <- nrow(AllIds)
-  cluster[[length(cluster)+1]] <- list(b)
+save_cluster_ID <- function () {
+    while(counter > 0 ) {
+      a <- rownames(as.matrix(fpSim(fpset[as.character(AllIds[1,])], fpset, method="Tanimoto", cutoff=0.3)))
+      b <- data.frame(ID=a)
+      del <- (!c(AllIds$ID %in% b$ID))
+      AllIds <- AllIds[del,]
+      AllIds <- data.frame(ID= AllIds)
+      counter <- nrow(AllIds)
+      cluster[[length(cluster)+1]] <- list(b)
+    }
 }
+
+save_cluster_ID()
 
 # checking number of created clusters and printing them
 print("number of clusters")

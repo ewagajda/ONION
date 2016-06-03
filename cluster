@@ -6,7 +6,7 @@ library(ChemmineR)
 library(ChemmineOB)
 
 #load dataset - one sdf file containing  set of sdfs (one sdf per molecule)
-sdfset <- read.SDFset("C:/Users/Ewka/Documents/test3.sdf")
+sdfset <- read.SDFset("URL address or path to local file")
 sdfset
 
 #checking for duplicate molecules in loaded sdf file
@@ -45,15 +45,3 @@ while(counter > 0 ) {
 print("number of clusters")
 length(cluster)
 cluster
-
-
-
-
-
-
-
-
-
-
-
-
